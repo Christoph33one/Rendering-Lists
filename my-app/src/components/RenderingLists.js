@@ -32,12 +32,12 @@ function RenderingLists() {
   return (
     <div>
         {bookList.map(book => {
-            return <h2>{book}</h2>
+            return <h2 key={book}>{book}</h2>
         })}
         <hr/>
         {books.map(book => {
             return (
-                <div>
+                <div key={book.title}>
                     <h5>{book.title}</h5>
                     <p>{book.author}</p>
                     <p>{book.pages}</p>
@@ -49,7 +49,7 @@ function RenderingLists() {
         <hr/>
         {
             books.map(book => {
-                return <Book book={book}/>
+                return <Book key={book.title} book={book}/>
             })
         }
     </div>
@@ -64,6 +64,9 @@ function RenderingLists() {
 // the arrow function as a for loop tells, for eack book in the array, render a book component. which takes a property of book
 // and passing the value of an object in the array. 
 // the book component in the books.js file receives the object as a prop and then returns each object
+
+// IMPORTANT! WHEN RENDERING LIST, YOU MUST ADD A KEY TO THE COMPONENT OR YOU WILL GET AN ERROR IN THE CONSOLE!
+// VIEW THIS ON LINE 35!!
 
 
 export default RenderingLists
