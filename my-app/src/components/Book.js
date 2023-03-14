@@ -14,6 +14,6 @@ function Book(props) {
 }
 // book component 
 // creat a const to give book = to props.book
-// now this book component will take a object in the array as a prop.
+// now this book component will take a object in the array as a prop!.
 
 export default Book
